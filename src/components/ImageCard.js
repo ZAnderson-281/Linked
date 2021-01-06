@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {
   Avatar,
   Card,
+  CardActionArea,
   CardActions,
   CardContent,
   CardHeader,
@@ -13,6 +14,7 @@ import {
 import { blue } from "@material-ui/core/colors";
 
 import CommentForm from "./CommentForm";
+import CommentSection from "./CommentSection";
 
 const styles = makeStyles((theme) => ({
   card: {
@@ -30,11 +32,16 @@ const styles = makeStyles((theme) => ({
     padding: ".5rem .6rem",
     paddingTop: ".6rem",
   },
+  commentSectionToggle: {
+    backgroundColor: "#fafafa",
+    padding: "1rem 1.5rem",
+  },
 }));
 
 function ImageCard({ username, description, profileImg, img }) {
   const [isLiked, setIsLiked] = useState(false);
   const [isToggleComment, setToggleComment] = useState(false);
+  const [isToggleCommentSection, setIsToggleCommentSection] = useState(false);
 
   const classes = styles();
 
@@ -44,6 +51,10 @@ function ImageCard({ username, description, profileImg, img }) {
 
   const handleToggleComment = () => {
     setToggleComment(!isToggleComment);
+  };
+
+  const handleToggleCommentSection = () => {
+    setIsToggleCommentSection(!isToggleCommentSection);
   };
 
   return (
@@ -73,7 +84,14 @@ function ImageCard({ username, description, profileImg, img }) {
             <i className="fas fa-comment"></i>
           </IconButton>
         </CardActions>
+        <CardActionArea
+          className={classes.commentSectionToggle}
+          onClick={handleToggleCommentSection}
+        >
+          <Typography> 2 Comments</Typography>
+        </CardActionArea>
         {isToggleComment ? <CommentForm /> : ""}
+        {isToggleCommentSection ? <CommentSection /> : ""}
       </Card>
     </div>
   );

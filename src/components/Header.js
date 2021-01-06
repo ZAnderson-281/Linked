@@ -29,7 +29,7 @@ function Header() {
       <AppBar className={classes.nav}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            App Title
+            Link
           </Typography>
           <IconButton>
             <Avatar src={img}></Avatar>
