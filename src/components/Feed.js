@@ -10,6 +10,9 @@ import { makeStyles } from "@material-ui/core";
 const styles = makeStyles((theme) => ({
   feed: {
     marginTop: "4.5rem",
+    overflowY: "scroll",
+    overflowX: "none",
+    height: "78.4vh",
   },
 }));
 function Feed() {
