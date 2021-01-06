@@ -1,0 +1,16 @@
+.load {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(87, 18, 18);
+  background: linear-gradient(
+    145deg,
+    rgba(87, 18, 18, 1) 0%,
+    rgba(168, 23, 22, 1) 39%,
+    rgba(255, 184, 0, 1) 95%,
+    rgba(255, 184, 0, 1) 100%
+  );
+  color: white;
+}

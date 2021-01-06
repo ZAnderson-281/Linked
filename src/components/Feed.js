@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import ImageCard from "./ImageCard";
 import NoticeCard from "./NoticeCard";
@@ -16,6 +16,18 @@ const styles = makeStyles((theme) => ({
   },
 }));
 function Feed() {
+  const [postData, setPostData] = useState([]);
+
+  // const fetchPosts = async () => {
+  //   const data = ;
+  //   const userData = data.json();
+  //   setPostData([...postData, userData]);
+  // };
+
+  useEffect(() => {
+    // fetchPosts();
+  });
+
   const classes = styles();
   return (
     <section className={classes.feed}>
